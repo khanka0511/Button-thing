@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+	<script>
+  	var config = {
+    	  apiKey: "AIzaSyCEQhs6cBAjdUXWPTaVeXqP5qcxylko41c",
+    	  authDomain: "chat-77ca3.firebaseapp.com",
+    	  databaseURL: "https://chat-77ca3.firebaseio.com",
+    	  projectId: "chat-77ca3",
+    	  storageBucket: "chat-77ca3.appspot.com",
+    	  messagingSenderId: "312413147357"
+  	};
+  	firebase.initializeApp(config);
+	</script>
+ 	<title>Chat</title>
+	<script defer="defer" src="https://www.gstatic.com/firebasejs/5.0.4/firebase-app.js"></script>
+   	<script defer="defer" src="https://www.gstatic.com/firebasejs/5.0.4/firebase-database.js"></script>
+	<script defer="" src="/__/firebase/init.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body class="flex">
+	<script>
+		firebase.database().ref('/').on('value', function(snapshot) {
+			var chat_block = document.getElementById('chat');
+			chat_block.innerHTML = '';
+			snapshot.forEach(function(child) {
+				var msg = document.createElement('p');
+				msg.innerHTML = child.val().message;
+				chat_block.appendChild(msg);  
+			});	
+		});
+		function onClick() {
+			var ref = firebase.database().ref('/');
+			var text = document.getElementById('text').value;
+			document.getElementById('text').value = '';
+			var obj = {message: text};
+			ref.push(obj);
+		}
+	</script>
+	<h2>Send message</h2>
+	<input id="text">
+	<button class="button" onclick="onClick()">Send</button>
+	<div id="chat"></div>
+</body>
+</html>
