@@ -3,6 +3,7 @@
 <html>
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
 	<script>
   	var config = {
@@ -20,9 +21,54 @@
    	<script defer="defer" src="https://www.gstatic.com/firebasejs/5.0.4/firebase-database.js"></script>
 	<script defer="" src="/__/firebase/init.js"></script>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	
 </head>
-<body class="flex" </body>
+<body class="flex">
+	<div class="center">
+		<h2>Send message</h2>
+		<input id="text" placeholder="Type to everyone...">
+		<button class="button" onclick="onClick()">Send</button>
+		<div id="chat" type="text"></div>
+	</div>
+	<button id="button">Virtual Keyboard</button>
+	<div id="myModal" class="modal">
+		<div class="modal-content">
+			<div class="modal-body">
+				<span class="close">&times;</span>
+			</div>
+			<div class="modal-body">
+				<div>
+					<button class="button" type="button" onclick="tab();" >Tab</button>
+					<button class="button" type="button" onclick="input(this);" value="q">q</button>
+					<button class="button" type="button" onclick="input(this);" value="w">w</button>
+					<button class="button" type="button" onclick="input(this);" value="e">e</button>
+					<button class="button" type="button" onclick="input(this);" value="r">r</button>
+					<button class="button" type="button" onclick="input(this);" value="t">t</button>
+					<button class="button" type="button" onclick="input(this);" value="y">y</button>
+					<button class="button" type="button" onclick="input(this);" value="u">u</button>
+					<button class="button" type="button" onclick="input(this);" value="i">i</button>
+					<button class="button" type="button" onclick="input(this);" value="o">o</button>
+					<button class="button" type="button" onclick="input(this);" value="p">p</button>
+					<button class="button" type="button" onclick="input(this);" value="[">[</button>
+					<button class="button" type="button" onclick="input(this);" value="]">]</button>
+					<button class="button" type="button" onclick="input(this);" value="\">\</button>
+					<br/>
+					<button class="button" type="button" onclick="tab();" >Tab</button>
+					<button class="button" type="button" onclick="input(this);" value="">j</button>
+					<br/>
+					<input class="button" type="button" value="Backspace" onclick="del();" />
+				</div>
+			</div>
+			<div class="modal-body">
+			</div>
+		</div>
+	</div>
+	
 	<script>
+		var modal = document.getElementById('myModal');
+		var btn = document.getElementById("button");
+		var span = document.getElementsByClassName("close")[0];
+
 		firebase.database().ref('/').on('value', function(snapshot) {
 			var chat_block = document.getElementById('chat');
 			chat_block.innerHTML = '';
@@ -32,6 +78,7 @@
 				chat_block.appendChild(msg);  
 			});	
 		});
+
 		function onClick() {
 			//var d = new Date();
 			//var n = d.getDate();
@@ -43,53 +90,44 @@
 		}
 		function input(e) {
 			var text = document.getElementById("text");
-		    text.value = text.value + e.value;
+			text.value = text.value + e.value;
 		}
 
 		function del() {
-		    var text = document.getElementById("text");
-		    text.value = text.value.substr(0, text.value.length - 1);
+			var text = document.getElementById("text");
+			text.value = text.value.substr(0, text.value.length - 1);
+		}
+
+			
+		btn.onclick = function() {
+			modal.style.display = "block";
+		}
+
+		span.onclick = function() {
+			modal.style.display = "none";
+		}
+
+		window.onclick = function(event) {
+			if (event.target == modal) {
+				modal.style.display = "none";
+			}
 		}
 		/*
 		function load() {
- 		   var array = new Array();
+			var array = new Array();
 
- 		   while (array.length < 10) {
- 		        var temp = Math.round(Math.random() * 9);
- 		        if (!contain(array, temp)) {
- 		           array.push(temp);
- 		        }
- 		   }
- 		   for (i = 0; i < 10; i++) {
- 		       var btn = document.getElementById("btn" + i);
- 		       btn.value = array[i];
- 		   }
+			while (array.length < 10) {
+					var temp = Math.round(Math.random() * 9);
+					if (!contain(array, temp)) {
+					array.push(temp);
+					}
+			}
+			for (i = 0; i < 10; i++) {
+				var btn = document.getElementById("btn" + i);
+				btn.value = array[i];
+			}
 		}	
 		*/		
 	</script>
-	<div class="center">
-		<h2>Send message</h2>
-		<input id="text" placeholder="Type to everyone...">
-		<button class="button" onclick="onClick()">Send</button>
-		<div id="chat" type="text"></div>
-	</div>
-	
-	<div id="VirtualKey">
-		<input class="button" type="button" onclick="input(this);" value="q" />
-		<input class="button" type="button" onclick="input(this);" value="w" />
-		<input class="button" type="button" onclick="input(this);" value="e" />
-		<br />
-		<input class="button" type="button" onclick="input(this);" value="r" />
-		<input class="button" type="button" onclick="input(this);" value="t" />
-		<input class="button" type="button" onclick="input(this);" value="y" />
-		<br />
-		<input class="button" type="button" onclick="input(this);" value="a" />
-		<input class="button" type="button" onclick="input(this);" value="a" />
-		<classput class="button" type="button" onclick="input(this);" value="a" />
-		<input class="button" type="button" onclick="input(this)" value="a" />
-		<br />
-		<input class="button" type="button" value="Backspace" onclick="del();" />
-	</div>
-		
 </body>
 </html>
