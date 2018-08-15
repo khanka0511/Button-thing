@@ -8,7 +8,7 @@
     display: inline-block;
     font-size: 16px;
     margin: 4px 2px;
-    -webkit-transition-duration: 0.4s; /* Safari */
+    -webkit-transition-duration: 0.4s;  /*Safari*/ 
     transition-duration: 0.4s;
     cursor: pointer;
 }
@@ -19,7 +19,35 @@
     border: 2px solid #4CAF50;
 }
 
+body {
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;   
+}
+
+.center {
+    max-width: 500px;
+    margin: auto;
+    background: gray;
+    padding: 10px;
+    text-align: center;
+    opacity: 0.5;
+    margin-top: 30px;
+}
+
 .button:hover {
     background-color: #4CAF50;
     color: white;
+}
+
+input {
+    width: 80%;
+    height: 120%;
+    padding: 8px 15px;
+    margin: 5px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    box-sizing: border-box;
 }

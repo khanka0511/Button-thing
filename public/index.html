@@ -33,16 +33,20 @@
 			});	
 		});
 		function onClick() {
+			var d = new Date();
+			var n = d.getDate();
 			var ref = firebase.database().ref('/');
 			var text = document.getElementById('text').value;
 			document.getElementById('text').value = '';
-			var obj = {message: text};
+			var obj = {message: text, n};
 			ref.push(obj);
 		}
 	</script>
-	<h2>Send message</h2>
-	<input id="text">
-	<button class="button" onclick="onClick()">Send</button>
-	<div id="chat"></div>
+	<div class="center">
+		<h2>Send message</h2>
+		<input id="text" placeholder="Type to everyone...">
+		<button class="button" onclick="onClick()">Send</button>
+		<div id="chat"></div>
+	</div>
 </body>
 </html>
