@@ -21,32 +21,75 @@
 	<script defer="" src="/__/firebase/init.js"></script>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body class="flex">
+<body class="flex" </body>
 	<script>
 		firebase.database().ref('/').on('value', function(snapshot) {
 			var chat_block = document.getElementById('chat');
 			chat_block.innerHTML = '';
 			snapshot.forEach(function(child) {
-				var msg = document.createElement('time');
+				var msg = document.createElement('p');
 				msg.innerHTML = child.val().message;
 				chat_block.appendChild(msg);  
 			});	
 		});
 		function onClick() {
-			var d = new Date();
+			//var d = new Date();
 			//var n = d.getDate();
 			var ref = firebase.database().ref('/');
 			var text = document.getElementById('text').value;
 			document.getElementById('text').value = '';
-			var obj = {message: text, d};
+			var obj = {message: text};
 			ref.push(obj);
 		}
+		function input(e) {
+			var text = document.getElementById("text");
+		    text.value = text.value + e.value;
+		}
+
+		function del() {
+		    var text = document.getElementById("text");
+		    text.value = text.value.substr(0, text.value.length - 1);
+		}
+		/*
+		function load() {
+ 		   var array = new Array();
+
+ 		   while (array.length < 10) {
+ 		        var temp = Math.round(Math.random() * 9);
+ 		        if (!contain(array, temp)) {
+ 		           array.push(temp);
+ 		        }
+ 		   }
+ 		   for (i = 0; i < 10; i++) {
+ 		       var btn = document.getElementById("btn" + i);
+ 		       btn.value = array[i];
+ 		   }
+		}	
+		*/		
 	</script>
 	<div class="center">
 		<h2>Send message</h2>
 		<input id="text" placeholder="Type to everyone...">
 		<button class="button" onclick="onClick()">Send</button>
-		<div id="chat"></div>
+		<div id="chat" type="text"></div>
 	</div>
+	
+	<div id="VirtualKey">
+		<input class="button" type="button" onclick="input(this);" value="q" />
+		<input class="button" type="button" onclick="input(this);" value="w" />
+		<input class="button" type="button" onclick="input(this);" value="e" />
+		<br />
+		<input class="button" type="button" onclick="input(this);" value="r" />
+		<input class="button" type="button" onclick="input(this);" value="t" />
+		<input class="button" type="button" onclick="input(this);" value="y" />
+		<br />
+		<input class="button" type="button" onclick="input(this);" value="a" />
+		<input class="button" type="button" onclick="input(this);" value="a" />
+		<classput class="button" type="button" onclick="input(this);" value="a" />
+		<input class="button" type="button" onclick="input(this)" value="a" />
+		<br />
+		<input class="button" type="button" value="Backspace" onclick="del();" />
+	</div>
+		
 </body>
 </html>
