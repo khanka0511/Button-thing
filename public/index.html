@@ -27,18 +27,18 @@
 			var chat_block = document.getElementById('chat');
 			chat_block.innerHTML = '';
 			snapshot.forEach(function(child) {
-				var msg = document.createElement('p');
+				var msg = document.createElement('time');
 				msg.innerHTML = child.val().message;
 				chat_block.appendChild(msg);  
 			});	
 		});
 		function onClick() {
 			var d = new Date();
-			var n = d.getDate();
+			//var n = d.getDate();
 			var ref = firebase.database().ref('/');
 			var text = document.getElementById('text').value;
 			document.getElementById('text').value = '';
-			var obj = {message: text, n};
+			var obj = {message: text, d};
 			ref.push(obj);
 		}
 	</script>
