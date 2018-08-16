@@ -38,6 +38,21 @@
 			</div>
 			<div class="modal-body">
 				<div>
+					<button class="button" type="button" onclick="input(this);" value="`">`</button>
+					<button class="button" type="button" onclick="input(this);" value="1">1</button>
+					<button class="button" type="button" onclick="input(this);" value="2">2</button>
+					<button class="button" type="button" onclick="input(this);" value="3">3</button>
+					<button class="button" type="button" onclick="input(this);" value="4">4</button>
+					<button class="button" type="button" onclick="input(this);" value="5">5</button>
+					<button class="button" type="button" onclick="input(this);" value="6">6</button>
+					<button class="button" type="button" onclick="input(this);" value="7">7</button>
+					<button class="button" type="button" onclick="input(this);" value="8">8</button>
+					<button class="button" type="button" onclick="input(this);" value="9">9</button>
+					<button class="button" type="button" onclick="input(this);" value="0">0</button>
+					<button class="button" type="button" onclick="input(this);" value="-">-</button>
+					<button class="button" type="button" onclick="input(this);" value="=">=</button>
+					<button claas="button" type="button" value="Backspace" onclick="del();">BackSpace</button>
+					<br/>
 					<button class="button" type="button" onclick="tab();" >Tab</button>
 					<button class="button" type="button" onclick="input(this);" value="q">q</button>
 					<button class="button" type="button" onclick="input(this);" value="w">w</button>
@@ -53,10 +68,33 @@
 					<button class="button" type="button" onclick="input(this);" value="]">]</button>
 					<button class="button" type="button" onclick="input(this);" value="\">\</button>
 					<br/>
-					<button class="button" type="button" onclick="tab();" >Tab</button>
-					<button class="button" type="button" onclick="input(this);" value="">j</button>
+					<button class="button" type="button" onclick="caps();" >Caps</button>
+					<button class="button" type="button" onclick="input(this);" value="a">a</button>
+					<button class="button" type="button" onclick="input(this);" value="a">a</button>
+					<button class="button" type="button" onclick="input(this);" value="a">s</button>
+					<button class="button" type="button" onclick="input(this);" value="a">d</button>
+					<button class="button" type="button" onclick="input(this);" value="a">f</button>
+					<button class="button" type="button" onclick="input(this);" value="a">g</button>
+					<button class="button" type="button" onclick="input(this);" value="a">h</button>
+					<button class="button" type="button" onclick="input(this);" value="a">j</button>
+					<button class="button" type="button" onclick="input(this);" value="a">k</button>
+					<button class="button" type="button" onclick="input(this);" value="a">l</button>
+					<button class="button" type="button" onclick="input(this);" value=";">;</button>
+					<button class="button" type="button" onclick="input(this);" value="'">'</button>
+					<button class="button" onclick="onClick()">Enter</button>
 					<br/>
-					<input class="button" type="button" value="Backspace" onclick="del();" />
+					<button class="button" type="button" onclick="caps();" > &nbsp;Shift </button>
+					<button class="button" type="button" onclick="input(this);" value="/">/</button>
+					<button class="button" type="button" onclick="input(this);" value="z">z</button>
+					<button class="button" type="button" onclick="input(this);" value="x">x</button>
+					<button class="button" type="button" onclick="input(this);" value="c">c</button>
+					<button class="button" type="button" onclick="input(this);" value="v">v</button>
+					<button class="button" type="button" onclick="input(this);" value="b">b</button>
+					<button class="button" type="button" onclick="input(this);" value="n">n</button>
+					<button class="button" type="button" onclick="input(this);" value="m">m</button>
+					<button class="button" type="button" onclick="input(this);" value=",">,</button>
+					<button class="button" type="button" onclick="input(this);" value=".">.</button>
+					<button class="button" type="button" onclick="caps();" >   Shift   </button>
 				</div>
 			</div>
 			<div class="modal-body">
@@ -78,6 +116,7 @@
 				chat_block.appendChild(msg);  
 			});	
 		});
+		
 
 		function onClick() {
 			//var d = new Date();
@@ -98,6 +137,11 @@
 			text.value = text.value.substr(0, text.value.length - 1);
 		}
 
+		function tab() {
+			var text = document.getElementById("text");
+			text.value = text.value.substr(0, text.value + 1);
+		}
+
 			
 		btn.onclick = function() {
 			modal.style.display = "block";
@@ -112,22 +156,7 @@
 				modal.style.display = "none";
 			}
 		}
-		/*
-		function load() {
-			var array = new Array();
-
-			while (array.length < 10) {
-					var temp = Math.round(Math.random() * 9);
-					if (!contain(array, temp)) {
-					array.push(temp);
-					}
-			}
-			for (i = 0; i < 10; i++) {
-				var btn = document.getElementById("btn" + i);
-				btn.value = array[i];
-			}
-		}	
-		*/		
+		
 	</script>
 </body>
 </html>
