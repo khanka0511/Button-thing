@@ -3,6 +3,7 @@
 <html>
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<<<<<<< HEAD
 	<meta name="viewport" content="width=device-width, initial-scale=1">	
 	<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
 	<script src="https://cdn.firebase.com/libs/firebaseui/3.3.0/firebaseui.js"></script>
@@ -49,4 +50,277 @@
 </head>	
 <body>
 	<div id="firebaseui-auth-container"></div>
+=======
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+	<script>
+  	var config = {
+    	  apiKey: "AIzaSyCEQhs6cBAjdUXWPTaVeXqP5qcxylko41c",
+    	  authDomain: "chat-77ca3.firebaseapp.com",
+    	  databaseURL: "https://chat-77ca3.firebaseio.com",
+    	  projectId: "chat-77ca3",
+    	  storageBucket: "chat-77ca3.appspot.com",
+    	  messagingSenderId: "312413147357"
+  	};
+  	firebase.initializeApp(config);
+	</script>
+ 	<title>Chat</title>
+	<script defer="defer" src="https://www.gstatic.com/firebasejs/5.0.4/firebase-app.js"></script>
+   	<script defer="defer" src="https://www.gstatic.com/firebasejs/5.0.4/firebase-database.js"></script>
+	<script defer="" src="/__/firebase/init.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	
+</head>
+<body class="flex">
+	<div class="center">
+		<h2>Send message</h2>
+		<div id="chat" type="text"></div>
+		<input id="text" placeholder="Type to everyone...">
+		<button class="button" onclick="onClick()">Send</button>
+	</div>
+	<button id="button">Virtual Keyboard</button>
+	<div id="myModal" class="modal">
+		<div class="modal-content">
+			<div class="modal-body">
+				<span class="close">&times;</span>
+			</div>
+			<div class="modal-body">
+				<div>
+					<button class="button" type="button" onclick="input(this);" value="`">`</button>
+					<button class="button" type="button" onclick="input(this);" value="1">1</button>
+					<button class="button" type="button" onclick="input(this);" value="2">2</button>
+					<button class="button" type="button" onclick="input(this);" value="3">3</button>
+					<button class="button" type="button" onclick="input(this);" value="4">4</button>
+					<button class="button" type="button" onclick="input(this);" value="5">5</button>
+					<button class="button" type="button" onclick="input(this);" value="6">6</button>
+					<button class="button" type="button" onclick="input(this);" value="7">7</button>
+					<button class="button" type="button" onclick="input(this);" value="8">8</button>
+					<button class="button" type="button" onclick="input(this);" value="9">9</button>
+					<button class="button" type="button" onclick="input(this);" value="0">0</button>
+					<button class="button" type="button" onclick="input(this);" value="-">-</button>
+					<button class="button" type="button" onclick="input(this);" value="=">=</button>
+					<button claas="button" type="button" value="Backspace" onclick="del();">BackSpace</button>
+					<br/>
+					<button class="button" type="button" onclick="tab();" >Tab</button>
+					<button class="button" type="button" onclick="input(this);" value="q">q</button>
+					<button class="button" type="button" onclick="input(this);" value="w">w</button>
+					<button class="button" type="button" onclick="input(this);" value="e">e</button>
+					<button class="button" type="button" onclick="input(this);" value="r">r</button>
+					<button class="button" type="button" onclick="input(this);" value="t">t</button>
+					<button class="button" type="button" onclick="input(this);" value="y">y</button>
+					<button class="button" type="button" onclick="input(this);" value="u">u</button>
+					<button class="button" type="button" onclick="input(this);" value="i">i</button>
+					<button class="button" type="button" onclick="input(this);" value="o">o</button>
+					<button class="button" type="button" onclick="input(this);" value="p">p</button>
+					<button class="button" type="button" onclick="input(this);" value="[">[</button>
+					<button class="button" type="button" onclick="input(this);" value="]">]</button>
+					<button class="button" type="button" onclick="input(this);" value="\">\</button>
+					<br/>
+					<button class="button" type="button" onclick="caps();" >Caps</button>
+					<button class="button" type="button" onclick="input(this);" value="a">a</button>
+					<button class="button" type="button" onclick="input(this);" value="a">a</button>
+					<button class="button" type="button" onclick="input(this);" value="a">s</button>
+					<button class="button" type="button" onclick="input(this);" value="a">d</button>
+					<button class="button" type="button" onclick="input(this);" value="a">f</button>
+					<button class="button" type="button" onclick="input(this);" value="a">g</button>
+					<button class="button" type="button" onclick="input(this);" value="a">h</button>
+					<button class="button" type="button" onclick="input(this);" value="a">j</button>
+					<button class="button" type="button" onclick="input(this);" value="a">k</button>
+					<button class="button" type="button" onclick="input(this);" value="a">l</button>
+					<button class="button" type="button" onclick="input(this);" value=";">;</button>
+					<button class="button" type="button" onclick="input(this);" value="'">'</button>
+					<button class="button" onclick="onClick()">Enter</button>
+					<br/>
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+					<button class="button" type="button" onclick="caps();" > &nbsp;Shift </button>
+>>>>>>> parent of f7c0f1a... Added some style in html and need to get to work on Caps and Shift
+=======
+					<button class="button" type="button" onclick="caps();" >Shift</button>
+>>>>>>> parent of 4c09dcc... Hmmmmmmm
+					<button class="button" type="button" onclick="input(this);" value="/">/</button>
+					<button class="button" type="button" onclick="input(this);" value="z">z</button>
+					<button class="button" type="button" onclick="input(this);" value="x">x</button>
+					<button class="button" type="button" onclick="input(this);" value="c">c</button>
+					<button class="button" type="button" onclick="input(this);" value="v">v</button>
+					<button class="button" type="button" onclick="input(this);" value="b">b</button>
+					<button class="button" type="button" onclick="input(this);" value="n">n</button>
+					<button class="button" type="button" onclick="input(this);" value="m">m</button>
+					<button class="button" type="button" onclick="input(this);" value=",">,</button>
+					<button class="button" type="button" onclick="input(this);" value=".">.</button>
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+					<button class="button" type="button" onclick="caps();" >Shift</button>
+>>>>>>> parent of 4c09dcc... Hmmmmmmm
+					<br/>
+					<button style="width: 500px" class="button" type="button" onclick="space();" >Spacebar</button>
+=======
+					<button class="button" type="button" onclick="caps();" >   Shift   </button>
+>>>>>>> parent of f7c0f1a... Added some style in html and need to get to work on Caps and Shift
+				</div>
+			</div>
+			<div class="modal-body">
+			</div>
+		</div>
+	</div>
+
+
+	
+	<script>
+		var modal = document.getElementById('myModal');
+		var btn = document.getElementById("button");
+		var span = document.getElementsByClassName("close")[0];
+
+		firebase.database().ref('/').on('value', function(snapshot) {
+			var chat_block = document.getElementById('chat');
+			chat_block.innerHTML = '';
+			snapshot.forEach(function(child) {
+				var msg = document.createElement('p');
+				msg.innerHTML = child.val().message;
+				chat_block.appendChild(msg);  
+			});		
+		});
+		
+
+		function onClick() {
+			//var d = new Date();
+			//var n = d.getDate();
+			var ref = firebase.database().ref('/');
+			var text = document.getElementById('text').value;
+			document.getElementById('text').value = '';
+			var obj = {message: text};
+			ref.push(obj);
+		}
+		function input(e) {
+			var text = document.getElementById("text");
+			text.value = text.value + e.value;
+		}
+
+		function del() {
+			var text = document.getElementById("text");
+			text.value = text.value.substr(0, text.value.length - 1);
+		}
+
+		function tab() {
+			var text = document.getElementById("text");
+			text.value = text.value.substr(0, text.value + 1);
+		}
+
+			
+		btn.onclick = function() {
+			modal.style.display = "block";
+		}
+
+		span.onclick = function() {
+			modal.style.display = "none";
+		}
+
+		window.onclick = function(event) {
+			if (event.target == modal) {	
+				modal.style.display = "none";
+			}
+		}
+<<<<<<< HEAD
+<<<<<<< HEAD
+
+		initApp = function() {
+			firebase.auth().onAuthStateChanged(function(user) {
+			if (user) {
+				// User is signed in.
+				var displayName = user.displayName;
+				var email = user.email;
+				var emailVerified = user.emailVerified;
+				var photoURL = user.photoURL;
+				var uid = user.uid;
+				var phoneNumber = user.phoneNumber;
+				var providerData = user.providerData;
+				user.getIdToken().then(function(accessToken) {
+				document.getElementById('sign-in-status').textContent = 'Signed in';
+				document.getElementById('sign-in').textContent = 'Sign out';
+				document.getElementById('account-details').textContent = JSON.stringify({
+					displayName: displayName,
+					email: email,
+					emailVerified: emailVerified,
+					phoneNumber: phoneNumber,
+					photoURL: photoURL,
+					uid: uid,
+					accessToken: accessToken,
+					providerData: providerData
+				}, null, '  ');
+				});
+			} else {
+				// User is signed out.
+				document.getElementById('sign-in-status').textContent = 'Signed out';
+				document.getElementById('sign-in').textContent = 'Sign in';
+				document.getElementById('account-details').textContent = 'null';
+			}
+			}, function(error) {
+			console.log(error);
+			});
+		};
+
+		window.addEventListener('load', function() {
+			initApp()
+		});
+=======
+		
+		function keyboard () {
+
+		}
+
+>>>>>>> parent of f7c0f1a... Added some style in html and need to get to work on Caps and Shift
+=======
+		/*
+		function keyboard () {
+
+		}
+		*/
+>>>>>>> parent of 4c09dcc... Hmmmmmmm
+	</script>
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<body>
+
+
+<input id="text" placeholder="Type to everyone...">
+<input id="Input" value="Some text..">
+<button id="Btn" onclick="myFunction()">Button</button>
+<div id="Div">
+</div>
+<p id="demo"></p>
+
+<script>
+var input = document.getElementById("Input");
+input.addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+        document.getElementById("Btn").click();
+    }
+});
+
+function myFunction() {
+	var div = document.getElementById("Div");
+	var keys = ["`", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-", "=", "BackSpace", "Tab", "q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "[", "]", "/", "Caps", "a", "s", "d", "f", "g", "h", "j", "k", "l", ";", "'", "Enter", "Shift", "z", "x", "c", "v", "b", "n", "m", ",", ".", "/", "Shift", "Space", 4
+    ];
+	for ( var t = 0; t < 54; t++) {
+		if (t == 14 || t == 28 || t == 41 || t == 53) {
+        	var d = document.createElement("BR");
+			div.insertBefore(d, div[t]);
+        }
+        var btn = document.createElement("BUTTON");
+        var l = document.createTextNode(keys[t]);
+        btn.appendChild(l);
+        div.appendChild(btn);
+           
+   	}
+}
+
+</script>
+
+</body>
+>>>>>>> 3bf5d6fe0770027823122f5315dac9689f3f1a36
 </html>
