@@ -45,100 +45,87 @@
 
 </head>
 <body>
+	<div id="sign-in-status"></div>
+	<div id="sign-in"></div>
+	<div id="account-details"></div>
+	<div class="center">
+		<h2>Send message</h2>
+		<div id="chat" type="text"></div>
+		<input type="text" id="text" placeholder="Type to everyone...">
+		<button class="button" onclick="onClick()">Send</button>
+	</div>
 	
-	<div class="body">
-		<img class="pictures" src="background.jpg" style="width:100%">
-		<img class="pictures" src="background1.jpg" style="width:100%">
-		<img class="pictures" src="background2.jpg" style="width:100%">
-		<img class="pictures" src="background3.jpg" style="width:100%">
-		<img class="pictures" src="background4.jpg" style="width:100%">
-		<img class="pictures" src="background5.jpg" style="width:100%">
-		<img class="pictures" src="background6.jpg" style="width:100%">
-		<img class="pictures" src="background7.jpg" style="width:100%">
-	  
-		<a class="previous round" onclick="pDivs(-1)">&#10094;</a>
-		<a class="next round" onclick="pDivs(1)">&#10095;</a>
-
-		<div id="sign-in-status"></div>
-		<div id="sign-in"></div>
-		<div id="account-details"></div>
-		<div class="center">
-			<h2>Send message</h2>
-			<div id="chat" type="text"></div>
-			<input type="text" id="text" placeholder="Type to everyone...">
-			<button class="button" onclick="onClick()">Send</button>
-		</div>
-		
-		<button id="vbutton">Virtual Keyboard</button>
-		<div id="myModal" class="modal">
-			<div class="modal-content">
-				<div class="modal-body">
-					<span class="close">&times;</span>
-				</div>
-				<div class="modal-body">
-					<div>
-						<button class="button" type="button" onclick="input(this);" value="`">`</button>
-						<button class="button" type="button" onclick="input(this);" value="1">1</button>
-						<button class="button" type="button" onclick="input(this);" value="2">2</button>
-						<button class="button" type="button" onclick="input(this);" value="3">3</button>
-						<button class="button" type="button" onclick="input(this);" value="4">4</button>
-						<button class="button" type="button" onclick="input(this);" value="5">5</button>
-						<button class="button" type="button" onclick="input(this);" value="6">6</button>
-						<button class="button" type="button" onclick="input(this);" value="7">7</button>
-						<button class="button" type="button" onclick="input(this);" value="8">8</button>
-						<button class="button" type="button" onclick="input(this);" value="9">9</button>
-						<button class="button" type="button" onclick="input(this);" value="0">0</button>
-						<button class="button" type="button" onclick="input(this);" value="-">-</button>
-						<button class="button" type="button" onclick="input(this);" value="=">=</button>
-						<button claas="button" type="button" value="Backspace" onclick="del();">BackSpace</button>
-						<br/>
-						<button class="button" type="button" onclick="tab();" >Tab</button>
-						<button class="button" type="button" onclick="input(this);" value="q">q</button>
-						<button class="button" type="button" onclick="input(this);" value="w">w</button>
-						<button class="button" type="button" onclick="input(this);" value="e">e</button>
-						<button class="button" type="button" onclick="input(this);" value="r">r</button>
-						<button class="button" type="button" onclick="input(this);" value="t">t</button>
-						<button class="button" type="button" onclick="input(this);" value="y">y</button>
-						<button class="button" type="button" onclick="input(this);" value="u">u</button>
-						<button class="button" type="button" onclick="input(this);" value="i">i</button>
-						<button class="button" type="button" onclick="input(this);" value="o">o</button>
-						<button class="button" type="button" onclick="input(this);" value="p">p</button>
-						<button class="button" type="button" onclick="input(this);" value="[">[</button>
-						<button class="button" type="button" onclick="input(this);" value="]">]</button>
-						<button class="button" type="button" onclick="input(this);" value="\">\</button>
-						<br/>
-						<button class="button" type="button" onclick="input(this);" value="a">a</button>
-						<button class="button" type="button" onclick="input(this);" value="a">a</button>
-						<button class="button" type="button" onclick="input(this);" value="a">s</button>
-						<button class="button" type="button" onclick="input(this);" value="a">d</button>
-						<button class="button" type="button" onclick="input(this);" value="a">f</button>
-						<button class="button" type="button" onclick="input(this);" value="a">g</button>
-						<button class="button" type="button" onclick="input(this);" value="a">h</button>
-						<button class="button" type="button" onclick="input(this);" value="a">j</button>
-						<button class="button" type="button" onclick="input(this);" value="a">k</button>
-						<button class="button" type="button" onclick="input(this);" value="a">l</button>
-						<button class="button" type="button" onclick="input(this);" value=";">;</button>
-						<button class="button" type="button" onclick="input(this);" value="'">'</button>
-						<button class="button" onclick="onClick()">Enter</button>
-						<br/>
-						<button class="button" type="button" onclick="input(this);" value="/">/</button>
-						<button class="button" type="button" onclick="input(this);" value="z">z</button>
-						<button class="button" type="button" onclick="input(this);" value="x">x</button>
-						<button class="button" type="button" onclick="input(this);" value="c">c</button>
-						<button class="button" type="button" onclick="input(this);" value="v">v</button>
-						<button class="button" type="button" onclick="input(this);" value="b">b</button>
-						<button class="button" type="button" onclick="input(this);" value="n">n</button>
-						<button class="button" type="button" onclick="input(this);" value="m">m</button>
-						<button class="button" type="button" onclick="input(this);" value=",">,</button>
-						<button class="button" type="button" onclick="input(this);" value=".">.</button>
-						<br/>
-						<button style="width: 500px" class="button" type="button" onclick="space();" >Spacebar</button>
-					</div>
-				</div>
-				<div class="modal-body">
+	<button id="vbutton">Virtual Keyboard</button>
+	<div id="myModal" class="modal">
+		<div class="modal-content">
+			<div class="modal-body">
+				<span class="close">&times;</span>
+			</div>
+			<div class="modal-body">
+				<div>
+					<button class="button" type="button" onclick="input(this);" value="`">`</button>
+					<button class="button" type="button" onclick="input(this);" value="1">1</button>
+					<button class="button" type="button" onclick="input(this);" value="2">2</button>
+					<button class="button" type="button" onclick="input(this);" value="3">3</button>
+					<button class="button" type="button" onclick="input(this);" value="4">4</button>
+					<button class="button" type="button" onclick="input(this);" value="5">5</button>
+					<button class="button" type="button" onclick="input(this);" value="6">6</button>
+					<button class="button" type="button" onclick="input(this);" value="7">7</button>
+					<button class="button" type="button" onclick="input(this);" value="8">8</button>
+					<button class="button" type="button" onclick="input(this);" value="9">9</button>
+					<button class="button" type="button" onclick="input(this);" value="0">0</button>
+					<button class="button" type="button" onclick="input(this);" value="-">-</button>
+					<button class="button" type="button" onclick="input(this);" value="=">=</button>
+					<button claas="button" type="button" value="Backspace" onclick="del();">BackSpace</button>
+					<br/>
+					<button class="button" type="button" onclick="tab();" >Tab</button>
+					<button class="button" type="button" onclick="input(this);" value="q">q</button>
+					<button class="button" type="button" onclick="input(this);" value="w">w</button>
+					<button class="button" type="button" onclick="input(this);" value="e">e</button>
+					<button class="button" type="button" onclick="input(this);" value="r">r</button>
+					<button class="button" type="button" onclick="input(this);" value="t">t</button>
+					<button class="button" type="button" onclick="input(this);" value="y">y</button>
+					<button class="button" type="button" onclick="input(this);" value="u">u</button>
+					<button class="button" type="button" onclick="input(this);" value="i">i</button>
+					<button class="button" type="button" onclick="input(this);" value="o">o</button>
+					<button class="button" type="button" onclick="input(this);" value="p">p</button>
+					<button class="button" type="button" onclick="input(this);" value="[">[</button>
+					<button class="button" type="button" onclick="input(this);" value="]">]</button>
+					<button class="button" type="button" onclick="input(this);" value="\">\</button>
+					<br/>
+					<button class="button" type="button" onclick="input(this);" value="a">a</button>
+					<button class="button" type="button" onclick="input(this);" value="a">a</button>
+					<button class="button" type="button" onclick="input(this);" value="a">s</button>
+					<button class="button" type="button" onclick="input(this);" value="a">d</button>
+					<button class="button" type="button" onclick="input(this);" value="a">f</button>
+					<button class="button" type="button" onclick="input(this);" value="a">g</button>
+					<button class="button" type="button" onclick="input(this);" value="a">h</button>
+					<button class="button" type="button" onclick="input(this);" value="a">j</button>
+					<button class="button" type="button" onclick="input(this);" value="a">k</button>
+					<button class="button" type="button" onclick="input(this);" value="a">l</button>
+					<button class="button" type="button" onclick="input(this);" value=";">;</button>
+					<button class="button" type="button" onclick="input(this);" value="'">'</button>
+					<button class="button" onclick="onClick()">Enter</button>
+					<br/>
+					<button class="button" type="button" onclick="input(this);" value="/">/</button>
+					<button class="button" type="button" onclick="input(this);" value="z">z</button>
+					<button class="button" type="button" onclick="input(this);" value="x">x</button>
+					<button class="button" type="button" onclick="input(this);" value="c">c</button>
+					<button class="button" type="button" onclick="input(this);" value="v">v</button>
+					<button class="button" type="button" onclick="input(this);" value="b">b</button>
+					<button class="button" type="button" onclick="input(this);" value="n">n</button>
+					<button class="button" type="button" onclick="input(this);" value="m">m</button>
+					<button class="button" type="button" onclick="input(this);" value=",">,</button>
+					<button class="button" type="button" onclick="input(this);" value=".">.</button>
+					<br/>
+					<button style="width: 500px" class="button" type="button" onclick="space();" >Spacebar</button>
 				</div>
 			</div>
+			<div class="modal-body">
+			</div>
 		</div>
+	</div>
+	
 	</div>
 		
 	<script>

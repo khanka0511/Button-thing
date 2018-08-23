@@ -4,7 +4,7 @@
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">	
-	<title>Chat</title>
+	<title>Rooms</title>
 	<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
 	<script src="https://cdn.firebase.com/libs/firebaseui/3.3.0/firebaseui.js"></script>
 	<script src="https://cdn.firebase.com/libs/firebaseui/3.3.0/firebaseui.js"></script>
@@ -39,28 +39,11 @@
 	};
 	firebase.initializeApp(config);
 	</script>
-	<script type="text/javascript">
-		// FirebaseUI config.
-		var uiConfig = {
-			signInSuccessUrl: 'main.html',
-			signInOptions: [
-			// Leave the lines as is for the providers you want to offer your users.
-			firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-			firebase.auth.EmailAuthProvider.PROVIDER_ID,
-			firebaseui.auth.AnonymousAuthProvider.PROVIDER_ID
-			],			
-		};
-
-		// Initialize the FirebaseUI Widget using Firebase.
-		var ui = new firebaseui.auth.AuthUI(firebase.auth());
-		// The start method will wait until the DOM is loaded.
-		ui.start('#firebaseui-auth-container', uiConfig);
-	</script>
+	
 </head>	
 <body>
-	<div id="firebaseui-auth-container"></div>
-	
-</body>
+    <button href="loggedin.html"></button>
+</body>	
 </html>
 
 
