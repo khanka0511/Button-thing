@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,14 +35,14 @@
   	};
   	firebase.initializeApp(config);
 	</script>
- 	<title>Chat</title>
+ 	<title>Gamer Room</title>
 	<script defer="defer" src="https://www.gstatic.com/firebasejs/5.0.4/firebase-app.js"></script>
    	<script defer="defer" src="https://www.gstatic.com/firebasejs/5.0.4/firebase-database.js"></script>
 	<script defer="" src="/__/firebase/init.js"></script>
-	<link rel="stylesheet" type="text/css" href="style.css">
-
+	<link rel="stylesheet" type="text/css" href="../style.css">
 </head>
-<body>
+<body style="background-image: url('../room-pictures/background5.jpg'); background-size: cover; background-repeat: no-repeat; background-attachment: fixed;   
+">
 	<div id="sign-in-status"></div>
 	<div id="sign-in"></div>
 	<div id="account-details"></div>
@@ -54,7 +52,6 @@
 		<input type="text" id="text" placeholder="Type to everyone...">
 		<button class="button" onclick="onClick()">Send</button>
 	</div>
-	
 	<button id="vbutton">Virtual Keyboard</button>
 	<div id="myModal" class="modal">
 		<div class="modal-content">
@@ -125,16 +122,13 @@
 			</div>
 		</div>
 	</div>
-	
-	</div>
-		
+	</div>	
 	<script>
 		var modal = document.getElementById('myModal');
 		var btn = document.getElementById("button");
 		var vbtn = document.getElementById("vbutton");
 		var span = document.getElementsByClassName("close")[0];
-
-		firebase.database().ref('/').on('value', function(snapshot) {
+		firebase.database().ref('/').child('room5').on('value', function(snapshot) {
 			var chat_block = document.getElementById('chat');
 			chat_block.innerHTML = '';
 			snapshot.forEach(function(child) {
@@ -143,8 +137,6 @@
 				chat_block.appendChild(msg);  
 			});		
 		});
-		
-
 		var text = document.getElementById("text");
 		text.addEventListener("keyup", function(event) {
 			event.preventDefault();
@@ -152,13 +144,10 @@
 				onClick();
 			}
 		});
-
-
-		
 		function onClick() {
 			//var d = new Date();
 			//var n = d.getDate();
-			var ref = firebase.database().ref('/');
+			var ref = firebase.database().ref().child('room5');
 			var text = document.getElementById('text').value;
 			document.getElementById('text').value = '';
 			var obj = {message: text};
@@ -168,57 +157,28 @@
 			var text = document.getElementById("text");
 			text.value = text.value + e.value;
 		}
-
 		function del() {
 			var text = document.getElementById("text");
 			text.value = text.value.substr(0, text.value.length - 1);
 		}
-    
 		function tab() {
 			var text = document.getElementById("text");
 			text.value = text.value +  '    ';
 		}
-
 		function space() {
 			var text = document.getElementById("text");
 			text.value = text.value + ' ';
-		}
-
-			
+		}	
 		vbtn.onclick = function() {
 			modal.style.display = "block";
 		}
-
 		span.onclick = function() {
 			modal.style.display = "none";
 		}
-
 		window.onclick = function(event) {
 			if (event.target == modal) {	
 				modal.style.display = "none";
 			}
-		}
-
-		var Index = 1;
-		Divs(Index);
-
-		function pDivs(n) {
-			Divs(Index += n);
-		}
-
-		function Divs(n) {
-			var i;
-			var x = document.getElementsByClassName("pictures");
-			if (n > x.length) {
-				Index = 1
-			}    
-			if (n < 1) {
-				Index = x.length
-			}
-			for (i = 0; i < x.length; i++) {
-				x[i].style.display = "none";  
-			}
-			x[Index-1].style.display = "block";  
 		}
 	</script>
 </body>

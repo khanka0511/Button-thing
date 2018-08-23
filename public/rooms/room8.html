@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+	<script src="https://cdn.firebase.com/libs/firebaseui/3.3.0/firebaseui.js"></script>
+	<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.3.0/firebaseui.css" />
+	<link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/3.4.0/firebase-ui-auth.css" />
+    <link rel="apple-touch-icon" sizes="57x57" href="favicon.ico/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="favicon.ico/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="favicon.ico/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="favicon.ico/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="favicon.ico/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="favicon.ico/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="favicon.ico/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="favicon.ico/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="favicon.ico/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="favicon.ico/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon.ico/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="favicon.ico/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon.ico/favicon-16x16.png">
+	<link rel="manifest" href="/manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+	<script>
+  	var config = {
+    	  apiKey: "AIzaSyCEQhs6cBAjdUXWPTaVeXqP5qcxylko41c",
+    	  authDomain: "chat-77ca3.firebaseapp.com",
+    	  databaseURL: "https://chat-77ca3.firebaseio.com",
+    	  projectId: "chat-77ca3",
+    	  storageBucket: "chat-77ca3.appspot.com",
+    	  messagingSenderId: "312413147357"
+  	};
+  	firebase.initializeApp(config);
+	</script>
+ 	<title>Freedom Room</title>
+	<script defer="defer" src="https://www.gstatic.com/firebasejs/5.0.4/firebase-app.js"></script>
+   	<script defer="defer" src="https://www.gstatic.com/firebasejs/5.0.4/firebase-database.js"></script>
+	<script defer="" src="/__/firebase/init.js"></script>
+	<link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body style="background-image: url('../room-pictures/background8.jpg'); background-size: cover; background-repeat: no-repeat; background-attachment: fixed;">
+	<div id="sign-in-status"></div>
+	<div id="sign-in"></div>
+	<div id="account-details"></div>
+	<div class="center">
+		<h2>Send message</h2>
+		<div id="chat" type="text"></div>
+		<input type="text" id="text" placeholder="Type to everyone...">
+		<button class="button" onclick="onClick()">Send</button>
+	</div>
+	<button id="vbutton">Virtual Keyboard</button>
+	<div id="myModal" class="modal">
+		<div class="modal-content">
+			<div class="modal-body">
+				<span class="close">&times;</span>
+			</div>
+			<div class="modal-body">
+				<div>
+					<button class="button" type="button" onclick="input(this);" value="`">`</button>
+					<button class="button" type="button" onclick="input(this);" value="1">1</button>
+					<button class="button" type="button" onclick="input(this);" value="2">2</button>
+					<button class="button" type="button" onclick="input(this);" value="3">3</button>
+					<button class="button" type="button" onclick="input(this);" value="4">4</button>
+					<button class="button" type="button" onclick="input(this);" value="5">5</button>
+					<button class="button" type="button" onclick="input(this);" value="6">6</button>
+					<button class="button" type="button" onclick="input(this);" value="7">7</button>
+					<button class="button" type="button" onclick="input(this);" value="8">8</button>
+					<button class="button" type="button" onclick="input(this);" value="9">9</button>
+					<button class="button" type="button" onclick="input(this);" value="0">0</button>
+					<button class="button" type="button" onclick="input(this);" value="-">-</button>
+					<button class="button" type="button" onclick="input(this);" value="=">=</button>
+					<button claas="button" type="button" value="Backspace" onclick="del();">BackSpace</button>
+					<br/>
+					<button class="button" type="button" onclick="tab();" >Tab</button>
+					<button class="button" type="button" onclick="input(this);" value="q">q</button>
+					<button class="button" type="button" onclick="input(this);" value="w">w</button>
+					<button class="button" type="button" onclick="input(this);" value="e">e</button>
+					<button class="button" type="button" onclick="input(this);" value="r">r</button>
+					<button class="button" type="button" onclick="input(this);" value="t">t</button>
+					<button class="button" type="button" onclick="input(this);" value="y">y</button>
+					<button class="button" type="button" onclick="input(this);" value="u">u</button>
+					<button class="button" type="button" onclick="input(this);" value="i">i</button>
+					<button class="button" type="button" onclick="input(this);" value="o">o</button>
+					<button class="button" type="button" onclick="input(this);" value="p">p</button>
+					<button class="button" type="button" onclick="input(this);" value="[">[</button>
+					<button class="button" type="button" onclick="input(this);" value="]">]</button>
+					<button class="button" type="button" onclick="input(this);" value="\">\</button>
+					<br/>
+					<button class="button" type="button" onclick="input(this);" value="a">a</button>
+					<button class="button" type="button" onclick="input(this);" value="a">a</button>
+					<button class="button" type="button" onclick="input(this);" value="a">s</button>
+					<button class="button" type="button" onclick="input(this);" value="a">d</button>
+					<button class="button" type="button" onclick="input(this);" value="a">f</button>
+					<button class="button" type="button" onclick="input(this);" value="a">g</button>
+					<button class="button" type="button" onclick="input(this);" value="a">h</button>
+					<button class="button" type="button" onclick="input(this);" value="a">j</button>
+					<button class="button" type="button" onclick="input(this);" value="a">k</button>
+					<button class="button" type="button" onclick="input(this);" value="a">l</button>
+					<button class="button" type="button" onclick="input(this);" value=";">;</button>
+					<button class="button" type="button" onclick="input(this);" value="'">'</button>
+					<button class="button" onclick="onClick()">Enter</button>
+					<br/>
+					<button class="button" type="button" onclick="input(this);" value="/">/</button>
+					<button class="button" type="button" onclick="input(this);" value="z">z</button>
+					<button class="button" type="button" onclick="input(this);" value="x">x</button>
+					<button class="button" type="button" onclick="input(this);" value="c">c</button>
+					<button class="button" type="button" onclick="input(this);" value="v">v</button>
+					<button class="button" type="button" onclick="input(this);" value="b">b</button>
+					<button class="button" type="button" onclick="input(this);" value="n">n</button>
+					<button class="button" type="button" onclick="input(this);" value="m">m</button>
+					<button class="button" type="button" onclick="input(this);" value=",">,</button>
+					<button class="button" type="button" onclick="input(this);" value=".">.</button>
+					<br/>
+					<button style="width: 500px" class="button" type="button" onclick="space();" >Spacebar</button>
+				</div>
+			</div>
+			<div class="modal-body">
+			</div>
+		</div>
+	</div>
+	</div>	
+	<script>
+		var modal = document.getElementById('myModal');
+		var btn = document.getElementById("button");
+		var vbtn = document.getElementById("vbutton");
+		var span = document.getElementsByClassName("close")[0];
+		firebase.database().ref('/').child('room8').on('value', function(snapshot) {
+			var chat_block = document.getElementById('chat');
+			chat_block.innerHTML = '';
+			snapshot.forEach(function(child) {
+				var msg = document.createElement('p');
+				msg.innerHTML = child.val().message;
+				chat_block.appendChild(msg);  
+			});		
+		});
+		var text = document.getElementById("text");
+		text.addEventListener("keyup", function(event) {
+			event.preventDefault();
+			if (event.keyCode === 13) {
+				onClick();
+			}
+		});
+		function onClick() {
+			//var d = new Date();
+			//var n = d.getDate();
+			var ref = firebase.database().ref().child('room8');
+			var text = document.getElementById('text').value;
+			document.getElementById('text').value = '';
+			var obj = {message: text};
+			ref.push(obj);
+		}
+		function input(e) {
+			var text = document.getElementById("text");
+			text.value = text.value + e.value;
+		}
+		function del() {
+			var text = document.getElementById("text");
+			text.value = text.value.substr(0, text.value.length - 1);
+		}
+		function tab() {
+			var text = document.getElementById("text");
+			text.value = text.value +  '    ';
+		}
+		function space() {
+			var text = document.getElementById("text");
+			text.value = text.value + ' ';
+		}	
+		vbtn.onclick = function() {
+			modal.style.display = "block";
+		}
+		span.onclick = function() {
+			modal.style.display = "none";
+		}
+		window.onclick = function(event) {
+			if (event.target == modal) {	
+				modal.style.display = "none";
+			}
+		}
+	</script>
+</body>
+</html>
