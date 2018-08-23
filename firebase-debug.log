@@ -1,24 +1,28 @@
-[debug] [2018-08-22T09:13:57.727Z] ----------------------------------------------------------------------
-[debug] [2018-08-22T09:13:57.729Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
-[debug] [2018-08-22T09:13:57.729Z] CLI Version:   4.2.0
-[debug] [2018-08-22T09:13:57.729Z] Platform:      darwin
-[debug] [2018-08-22T09:13:57.729Z] Node Version:  v10.8.0
-[debug] [2018-08-22T09:13:57.730Z] Time:          Wed Aug 22 2018 17:13:57 GMT+0800 (Ulaanbaatar Standard Time)
-[debug] [2018-08-22T09:13:57.730Z] ----------------------------------------------------------------------
+[debug] [2018-08-23T01:58:29.681Z] ----------------------------------------------------------------------
+[debug] [2018-08-23T01:58:29.683Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2018-08-23T01:58:29.684Z] CLI Version:   4.2.0
+[debug] [2018-08-23T01:58:29.684Z] Platform:      darwin
+[debug] [2018-08-23T01:58:29.684Z] Node Version:  v10.8.0
+[debug] [2018-08-23T01:58:29.720Z] Time:          Thu Aug 23 2018 09:58:29 GMT+0800 (Ulaanbaatar Standard Time)
+[debug] [2018-08-23T01:58:29.721Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2018-08-22T09:13:57.740Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2018-08-22T09:13:57.741Z] > authorizing via signed-in user
-[debug] [2018-08-22T09:13:57.743Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/chat-77ca3  
+[debug] [2018-08-23T01:58:29.772Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-08-23T01:58:29.772Z] > authorizing via signed-in user
+[debug] [2018-08-23T01:58:29.774Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-08-23T01:58:29.775Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+
+[debug] [2018-08-23T01:58:30.182Z] <<< HTTP RESPONSE 200
+[debug] [2018-08-23T01:58:30.247Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/chat-77ca3  
  
-[debug] [2018-08-22T09:13:59.027Z] <<< HTTP RESPONSE 200
-[debug] [2018-08-22T09:13:59.029Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/chat-77ca3  
+[debug] [2018-08-23T01:58:31.657Z] <<< HTTP RESPONSE 200
+[debug] [2018-08-23T01:58:31.658Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/chat-77ca3  
  
-[debug] [2018-08-22T09:14:00.446Z] <<< HTTP RESPONSE 200
+[debug] [2018-08-23T01:58:33.044Z] <<< HTTP RESPONSE 200
 [info] 
 [info] === Serving from '/Users/nest-4/Desktop/firebase-chat'...
 [info] 
-[debug] [2018-08-22T09:14:00.448Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/312413147357/clients/_:getWebAppConfig  
+[debug] [2018-08-23T01:58:33.046Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/312413147357/clients/_:getWebAppConfig  
  
-[debug] [2018-08-22T09:14:01.470Z] <<< HTTP RESPONSE 200
+[debug] [2018-08-23T01:58:34.002Z] <<< HTTP RESPONSE 200
 [info] i  hosting[chat-77ca3]: Serving hosting files from: public
 [info] ✔  hosting[chat-77ca3]: Local server: http://localhost:5000
