@@ -11,12 +11,14 @@
     -webkit-transition-duration: 0.4s; 
     transition-duration: 0.4s;
     cursor: pointer;
+    opacity: 0.3;
 }
 
 .button {
     background-color: white; 
     color: black; 
     border: 2px solid #4CAF50;
+    opacity: 0.3;
 }
 
 button {
@@ -32,16 +34,22 @@ button {
     -webkit-transition-duration: 0.4s; 
     transition-duration: 0.4s;
     cursor: pointer;
+    opacity: 0.3;
 }
 
 button {
     background-color: white; 
     color: black; 
     border: 2px solid #4CAF50;
+    opacity: 0.3;
 }
 
 body {
-    background-image: url('background.jpg'); background-size: cover; background-repeat: no-repeat; background-attachment: fixed;   
+    background-image: url('background.jpg'); 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+    background-size: contain;
 }
 
 .center {
@@ -57,6 +65,7 @@ body {
 .button:hover {
     background-color: #4CAF50;
     color: white;
+    opacity: 0.3;
 }
 
 input {
@@ -96,7 +105,9 @@ input {
     -webkit-animation-name: slideIn;
     -webkit-animation-duration: 0.4s;
     animation-name: slideIn;
-    animation-duration: 0.4s
+    animation-duration: 0.4s; 
+    height: 20%;
+
 }
 
 .close {
@@ -104,16 +115,6 @@ input {
     float: right;
     font-size: 28px;
     font-weight: bold;
-    /*
-    -webkit-animation-name: fadeOut; 
-    -webkit-animation-duration: 0.4s;
-    animation-name: fadeOut;
-    animation-duration: 0.4s;
-    -webkit-animation-name: slideOut;
-    -webkit-animation-duration: 0.4s;
-    animation-name: slideOut;
-    animation-duration: 0.4s;
-    */
 }
 
 .close:hover,
@@ -182,8 +183,7 @@ input {
     bottom: 8px;
     right: 16px;
     font-size: 18px;
-    float: right;
-
+    opacity: 0.3;
 }
 
 #vbutton {
@@ -195,6 +195,7 @@ input {
     right: 16px;
     font-size: 18px;
     float: right;
+    opacity: 0.3;
 }
 
 a {
@@ -216,4 +217,10 @@ a:hover {
 
 .round {
     border-radius: 50%;
+}
+
+background {
+    height: auto;
+    width: auto;
+    max-width: 100%;
 }
