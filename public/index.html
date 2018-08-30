@@ -3,7 +3,7 @@
 <html>
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">s
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">	
 	<title>Chat</title>
 	<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
 	<script src="https://cdn.firebase.com/libs/firebaseui/3.3.0/firebaseui.js"></script>
@@ -47,7 +47,6 @@
 			// Leave the lines as is for the providers you want to offer your users.
 			firebase.auth.GoogleAuthProvider.PROVIDER_ID,
 			firebase.auth.EmailAuthProvider.PROVIDER_ID,
-			firebaseui.auth.AnonymousAuthProvider.PROVIDER_ID
 			],			
 		};
 
@@ -57,7 +56,7 @@
 		ui.start('#firebaseui-auth-container', uiConfig);
 	</script>
 </head>	
-<body style="background-image: url('../room-pictures/background.jpg'); background-size: cover; background-repeat: no-repeat; background-attachment: fixed; margin-top: 300px">
+<body style="background-image: url('../room-pictures/background.jpg'); background-size: cover; background-repeat: no-repeat; background-attachment: fixed; margin-top: 230px; background-position: center">
 	<div id="firebaseui-auth-container"></div>
 </body>
 </html>

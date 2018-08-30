@@ -41,11 +41,8 @@
 	<script defer="" src="/__/firebase/init.js"></script>
 	<link rel="stylesheet" type="text/css" href="../style.css">
 </head>
-<body style="background-image: url('../room-pictures/background5.jpg'); background-size: cover; background-repeat: no-repeat; background-attachment: fixed;   
-">
-	<div id="sign-in-status"></div>
-	<div id="sign-in"></div>
-	<div id="account-details"></div>
+<body style="background-image: url('../room-pictures/background5.jpg'); background-size: cover; background-repeat: no-repeat; background-attachment: fixed; ">
+	<button onclick="BottomFunction()" id="myBtn2" title="Go to top">To Bottom</button>
 	<div class="center">
 		<h2>Send message</h2>
 		<div id="chat" type="text"></div>
@@ -123,6 +120,7 @@
 		</div>
 	</div>
 	</div>	
+	<button onclick="TopFunction()" id="myBtn" title="To Top">To Top</button>
 	<script>
 		var modal = document.getElementById('myModal');
 		var btn = document.getElementById("button");
@@ -179,6 +177,15 @@
 			if (event.target == modal) {	
 				modal.style.display = "none";
 			}
+		}
+		function BottomFunction() {
+			document.body.scrollTop = 100000;
+			document.documentElement.scrollTop = 100000;
+		}
+
+		function TopFunction() {
+			document.body.scrollTop = 0;
+			document.documentElement.scrollTop = 0;
 		}
 	</script>
 </body>
